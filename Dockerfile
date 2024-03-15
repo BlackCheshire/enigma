@@ -9,4 +9,3 @@ COPY . .
 RUN pipenv install --deploy
 
 EXPOSE 13337
-ENTRYPOINT ["python", "-m", "enigma"]
