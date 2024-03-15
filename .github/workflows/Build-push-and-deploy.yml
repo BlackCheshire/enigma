@@ -41,6 +41,8 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
+
+      - name: Deploy enigma
         run: |
           helm upgrade --install env .github/helm/env
           helm delete enigma --namespace enigma || true
