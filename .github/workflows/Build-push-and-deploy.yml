@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: behemoth131/enigma:{{ steps.vars.outputs.sha_short }}
+          tags: behemoth131/enigma:${{ steps.vars.outputs.sha_short }}
     
       - name: Install Helm
         uses: azure/setup-helm@v3
