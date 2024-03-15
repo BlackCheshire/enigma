@@ -38,9 +38,9 @@ jobs:
 
       - name: Set Kubernetes
         uses: azure/k8s-set-context@v1
-          with:
-            method: kubeconfig
-            kubeconfig: ${{ secrets.KUBE_CONFIG }}
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
         run: |
           helm upgrade --install env .github/helm/env
           helm delete enigma --namespace enigma || true
