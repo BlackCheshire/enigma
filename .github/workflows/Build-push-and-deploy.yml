@@ -44,10 +44,10 @@ jobs:
 
       - name: Deploy enigma
         run: |
-          helm upgrade --install env .github/helm/env
+          helm upgrade --install env .github/helm/env --namespace enigma 
           helm delete enigma --namespace enigma || true
           helm install enigma .github/helm/enigma \
           --set image.tag=${{ steps.vars.outputs.sha_short }} \
           --set image.repository=behemoth131/enigma \
-          --namespace dev 
+          --namespace enigma 
 
