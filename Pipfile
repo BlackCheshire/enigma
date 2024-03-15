@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+redis = {extras = ["hiredis"], version = "*"}
+uvicorn = {extras = ["standard"], version = "*"}
+python-dotenv = "*"
+pycryptodome = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

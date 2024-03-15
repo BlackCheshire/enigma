@@ -1,0 +1,17 @@
+STAGE: "" #STAND
+
+STANDS:
+  prod: "prod"
+  stage: "stage"
+  dev: "dev"
+  alpha: "alpha"
+STAND: "{{ get .Values.STANDS .Values.STAGE }}"
+
+BRANCH_NAMES:
+  prod: "master"
+  stage: "stage"
+  dev: "develop"
+  alpha: "alpha"
+BRANCH_NAME: "{{ get .Values.BRANCH_NAMES .Values.STAGE }}"
+
+
