@@ -45,7 +45,7 @@ def _init_config() -> Config:
         redis_port=int(os.getenv('REDIS_PORT')),
         redis_username=os.getenv('REDIS_USERNAME'),
         redis_password=os.getenv('REDIS_PASSWORD'),
-        encrypt_key=bytes(os.environ.get('ENCRYPT_KEY')),
+        encrypt_key=bytes(os.environ.get('ENCRYPT_KEY'),"utf-8"),
         encrypt_cache_prefix=os.getenv('ENCRYPT_CACHE_PREFIX'),
         encrypt_cache_ttl=int(os.getenv('ENCRYPT_CACHE_TTL')),
     )
