@@ -38,16 +38,16 @@ def _init_config() -> Config:
     log.info('Initializing config')
     load_dotenv()
     config = Config(
-        app_host=os.getenv('APP_HOST'),
-        app_port=int(os.getenv('APP_PORT')),
-        app_log_level=os.getenv('APP_LOG_LEVEL'),
-        redis_host=os.getenv('REDIS_HOST'),
-        redis_port=int(os.getenv('REDIS_PORT')),
-        redis_username=os.getenv('REDIS_USERNAME'),
-        redis_password=os.getenv('REDIS_PASSWORD'),
-        encrypt_key=bytes(os.environ.get('ENCRYPT_KEY'),"utf-8"),
-        encrypt_cache_prefix=os.getenv('ENCRYPT_CACHE_PREFIX'),
-        encrypt_cache_ttl=int(os.getenv('ENCRYPT_CACHE_TTL')),
+        app_host=_get_env_str('APP_HOST'),
+        app_port=_get_env_int('APP_PORT'),
+        app_log_level=_get_env_str('APP_LOG_LEVEL'),
+        redis_host=_get_env_str('REDIS_HOST'),
+        redis_port=_get_env_int('REDIS_PORT'),
+        redis_username=_get_env_str('REDIS_USERNAME'),
+        redis_password=_get_env_str('REDIS_PASSWORD'),
+        encrypt_key=_get_env_bytes('ENCRYPT_KEY'),
+        encrypt_cache_prefix=_get_env_str('ENCRYPT_CACHE_PREFIX'),
+        encrypt_cache_ttl=_get_env_int('ENCRYPT_CACHE_TTL'),
     )
     log.info('Config initialized')
     return config
