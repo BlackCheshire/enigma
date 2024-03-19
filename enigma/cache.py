@@ -45,8 +45,8 @@ def _init_redis() -> Redis:
     redis = Redis(
         host=cfg.redis_host,
         port=cfg.redis_port,
-        username=cfg.redis_username,
-        password=cfg.redis_password,
+        #username=cfg.redis_username,
+        #password=cfg.redis_password,
     )
     log.info('Redis initialized')
     return redis

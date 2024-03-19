@@ -14,8 +14,8 @@ class Config(NamedTuple):
     app_log_level: str
     redis_host: str
     redis_port: int
-    redis_username: str
-    redis_password: str
+    #redis_username: str
+    #redis_password: str
     encrypt_key: bytes
     encrypt_cache_prefix: str
     encrypt_cache_ttl: int
@@ -43,8 +43,8 @@ def _init_config() -> Config:
         app_log_level=_get_env_str('APP_LOG_LEVEL'),
         redis_host=_get_env_str('REDIS_HOST'),
         redis_port=_get_env_int('REDIS_PORT'),
-        redis_username=_get_env_str('REDIS_USERNAME'),
-        redis_password=_get_env_str('REDIS_PASSWORD'),
+        #redis_username=_get_env_str('REDIS_USERNAME'),
+        #redis_password=_get_env_str('REDIS_PASSWORD'),
         encrypt_key=_get_env_bytes('ENCRYPT_KEY'),
         encrypt_cache_prefix=_get_env_str('ENCRYPT_CACHE_PREFIX'),
         encrypt_cache_ttl=_get_env_int('ENCRYPT_CACHE_TTL'),
