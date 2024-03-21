@@ -1,7 +1,7 @@
 name: Build push and deploy
-on: push
-  #release:
-  #  types: [created]
+on:
+  release:
+    types: [created]
 
 jobs:
   deploy:
